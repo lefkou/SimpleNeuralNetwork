@@ -9,20 +9,20 @@ public class QuestionB {
         Network nnet = new Network(4,4);
         int[] inputPattern  = {1, 0, 1, 1};
         int[] outputPattern = {0, 0, 1, 1};
-        nnet.Train(inputPattern, outputPattern);
-        nnet.TrainReport();
+        nnet.train(inputPattern, outputPattern);
+        nnet.trainReport();
 
         // 2. Test the trained network with an incomplete version of the input pattern.
         System.out.print("\n\nQuestion B. 2) ");
         System.out.print("Testing with incomplete pattern:\n");
         int[] incompletePattern = {0, 0, 1, 0};
-        nnet.Test(incompletePattern);
+        nnet.test(incompletePattern);
 
         // 3. Test the trained network with a noisy pattern.
         System.out.printf("\n\nQuestion B. 3) ");
         System.out.printf("Testing with noisy pattern:\n");
         int[] noisyPattern = {1, 1, 1, 1};
-        nnet.Test(noisyPattern);
+        nnet.test(noisyPattern);
 
         // 4. Teach a 36-synapse network
         System.out.printf("\n\nQuestion B. 4) ");
@@ -33,26 +33,26 @@ public class QuestionB {
         // train 1
         int[] inputPattern1  = {1, 0, 0, 0, 1, 0};
         int[] outputPattern1 = {0, 1, 0, 1, 0, 1};
-        net2.Train(inputPattern1, outputPattern1);
+        net2.train(inputPattern1, outputPattern1);
         // train 2
         int[] inputPattern2  = {1, 1, 0, 1, 0, 1};
         int[] outputPattern2 = {0, 0, 1, 1, 0, 0};
-        net2.Train(inputPattern2, outputPattern2);
+        net2.train(inputPattern2, outputPattern2);
         // test
         int[] test = {1, 0, 0, 0, 1, 0};
-        net2.TrainReport();
-        net2.Test(test);
+        net2.trainReport();
+        net2.test(test);
 
         // 5. Test the network with a distorted version of one of the two training patterns
         System.out.printf("\n\nQuestion B. 5) ");
         System.out.printf("Testing with distorted pattern:\n");
         int[] distortedPattern = {1, 0, 1, 0, 1, 1};
-        net2.Test(distortedPattern);
+        net2.test(distortedPattern);
 
         // 6. Fraction of the synapses and parameter.
         System.out.printf("Network Saturation Info:\n");
         // load parameter
-        System.out.printf("Load Parameter (α): %2f\n", net2.GetLoadParameter());
+        System.out.printf("Load Parameter (α): %2f\n", net2.getLoadParameter());
 
         // fraction of synapses
         System.out.printf("Fraction of Synapses: \n");

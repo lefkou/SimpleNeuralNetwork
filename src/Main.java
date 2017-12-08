@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         // uncomment to run
-//        QuestionB.run();
+        QuestionB.run();
 //        QuestionC.run();
-        QuestionD.run();
+//        QuestionD.run();
 //        QuestionE.run();
 //        QuestionF.run();
 

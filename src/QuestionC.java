@@ -10,14 +10,14 @@ public class QuestionC {
     // Training 1
     int[] inputPattern1  = {1, 0, 0, 0, 1, 0};
     int[] outputPattern1 = {0, 1, 0, 1, 0, 1};
-    floatNet.Train(inputPattern1, outputPattern1);
+    floatNet.train(inputPattern1, outputPattern1);
     // Training 2
     int[] inputPattern2  = {1, 1, 0, 1, 0, 1};
     int[] outputPattern2 = {0, 0, 1, 1, 0, 0};
-    floatNet.Train(inputPattern2, outputPattern2);
+    floatNet.train(inputPattern2, outputPattern2);
     // Test
     int[] test = {1, 0, 0, 0, 1, 0};
-    floatNet.TrainReport();
-    floatNet.Test(test);
+    floatNet.trainReport();
+    floatNet.test(test);
     }
 }

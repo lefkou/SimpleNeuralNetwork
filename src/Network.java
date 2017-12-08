@@ -2,11 +2,22 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 public class Network {
+
+    class Layer {
+        List<Neuron> neurons;
+        public Layer() {
+            this.neurons = new ArrayList<>();
+        }
+    }
+
+    class Neuron {
+        double data = 0;
+        public Neuron(double data) {
+            this.data = data;
+        }
+    }
+
     private boolean trained;
     private int synapseMatrix[][] = null;
     private int  activationVector[] = null;
@@ -36,7 +47,7 @@ public class Network {
     // this function calculates the sum of all the
     // inputs and the weights for each neuron
     private int[] integrator() {
-        int integratorVector[] = new int[width];
+        int[] integratorVector = new int[width];
         for (int i = 0; i < width; i++) {
             integratorVector[i] = 0;
             for (int j = 0; j < height; j++) {
