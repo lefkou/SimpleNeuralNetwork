@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AIJAVA.iml" filepath="$PROJECT_DIR$/AIJAVA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nnet_java.iml" filepath="$PROJECT_DIR$/.idea/nnet_java.iml" />
     </modules>
   </component>
 </project>

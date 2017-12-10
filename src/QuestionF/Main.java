@@ -1,14 +1,20 @@
+package QuestionF;
+
 public class Main {
 
-
-
     public static void main(String[] args) {
-        // uncomment to run
-        QuestionB.run();
-//        QuestionC.run();
-//        QuestionD.run();
-//        QuestionE.run();
-//        QuestionF.run();
+        System.out.println(ANSI_GREEN + "EXERCISE F" + ANSI_RESET);
+
+        System.out.print(ANSI_GREEN + "\n\nTesting:\n" + ANSI_RESET);
+        Network nnet = new Network(6,6);
+        int[] inputPattern1  = {1, 0, 1, 0, 1, 0};
+        int[] outputPattern1 = {0, 1, 0, 1, 0, 1};
+        int[] inputPattern2  = {1, 1, 0, 1, 0, 0};
+        int[] outputPattern2 = {0, 0, 1, 1, 0, 0};
+        int[] testPattern    = {1, 1, 1, 0, 1, 0};
+        nnet.train(inputPattern1, outputPattern1);
+        nnet.train(inputPattern2, outputPattern2);
+        nnet.predict(testPattern);
 
 
     }
