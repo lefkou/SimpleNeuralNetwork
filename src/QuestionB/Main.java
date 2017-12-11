@@ -38,6 +38,7 @@ public class Main {
         nnet.train(inputPattern1, outputPattern1);
         nnet.train(inputPattern2, outputPattern2);
         nnet.predict(testPattern);
+        nnet.printSynapticMatrix();
 
         // 5. Test the network with a distorted version of one of the
         // two training patterns

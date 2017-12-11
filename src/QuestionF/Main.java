@@ -13,7 +13,8 @@ public class Main {
         int[] outputPattern2 = {0, 0, 1, 1, 0, 0};
         int[] testPattern    = {1, 1, 1, 0, 1, 0};
         nnet.train(inputPattern1, outputPattern1);
-        nnet.train(inputPattern2, outputPattern2);
+//        nnet.train(inputPattern2, outputPattern2);
+        nnet.printSynapticMatrix();
         nnet.predict(testPattern);
 
 

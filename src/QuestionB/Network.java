@@ -131,7 +131,7 @@ public class Network {
 //        printSynapticMatrix();
         System.out.print("Test Pattern: ");
         printPattern(input);
-//        printSumVector();
+        printSumVector();
         printOutputVector();
 
         return outputVector;

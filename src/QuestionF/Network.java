@@ -1,9 +1,7 @@
 package QuestionF;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+
 
 public class Network {
 
@@ -29,7 +27,7 @@ public class Network {
 
     public int width;
     private int height;
-    private int[] synapticMatrix;
+    private HashMap<Integer, ArrayList<Integer>> synapticMatrix;
     public List<Association> associations;
     private int[] sumVector;
     private int[] outputVector;
@@ -40,7 +38,7 @@ public class Network {
     public Network(int w, int h) {
         this.width = w;
         this.height = h;
-        this.synapticMatrix = new int[w*h];
+        this.synapticMatrix = new HashMap<>();
         this.associations = new ArrayList<>();
         this.sumVector = new int[w];
         this.outputVector = new int[w];
@@ -51,12 +49,23 @@ public class Network {
     void updateSynapticMatrix(int[] inputPattern, int[] outputPattern) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                if(inputPattern[i] == 1 &&  outputPattern[j] == 1 && this.synapticMatrix[i*width+j] == 0) {
-                    this.synapticMatrix[i*width+j] = 1;
+                if(inputPattern[i]*outputPattern[j] == 1) {
+                    if(synapticMatrix.containsKey(i)){
+                        if(!synapticMatrix.get(i).contains(j)) {
+                            synapticMatrix.get(i).add(j);
+                        }
+                    } else {
+                        synapticMatrix.put(i, new ArrayList<>());
+                        synapticMatrix.get(i).add(j);
+                    }
                 }
+
             }
         }
     }
+
+
+
 
 
 
@@ -83,11 +92,12 @@ public class Network {
 
     void createSummaryVector(int[] input) {
         for (int i = 0; i < width; i++) {
-            int sum = 0;
             for (int j = 0; j < height; j++) {
-                sum += input[j] * this.synapticMatrix[(j*width+i)];
+               if(synapticMatrix.containsKey(i) && synapticMatrix.get(i).contains(j)) {
+                   sumVector[j] += input[i];
+//                   System.out.println(synapticMatrix.get(i).get(j));
+               }
             }
-            sumVector[i] = sum;
         }
     }
 
@@ -131,7 +141,7 @@ public class Network {
 //        printSynapticMatrix();
         System.out.print("Test Pattern: ");
         printPattern(input);
-//        printSumVector();
+        printSumVector();
         printOutputVector();
 
         return outputVector;
@@ -164,18 +174,18 @@ public class Network {
         return (float) associations.size() / (float) width;
     }
 
-    public float getFractionOfSynapses() {
-        // number of synapses that can be strengthened
-        int counter = 0;
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                if(this.synapticMatrix[i*width+j] != 1) {
-                    counter ++;
-                }
-            }
-        }
-        return (float)(height*width) / counter;
-    }
+//    public float getFractionOfSynapses() {
+//        // number of synapses that can be strengthened
+//        int counter = 0;
+//        for (int i = 0; i < width; i++) {
+//            for (int j = 0; j < height; j++) {
+//                if(this.synapticMatrix[i*width+j] != 1) {
+//                    counter ++;
+//                }
+//            }
+//        }
+//        return (float)(height*width) / counter;
+//    }
 
 
     public void saturate() {
@@ -229,12 +239,11 @@ public class Network {
     /* * * * * * * * * * * */
 
     void printSynapticMatrix() {
-        System.out.print("\n\nSynaptic Matrix {");
-        for (int i = 0; i < width; i++) {
-            System.out.println();
-            for (int j = 0; j < height; j++) {
-                System.out.print(" " + this.synapticMatrix[i*width+j]);
-            }
+        System.out.print("\n\nSynaptic Matrix {\n");
+        for (Map.Entry<Integer, ArrayList<Integer>> entry : synapticMatrix.entrySet()) {
+            Integer key = entry.getKey();
+            ArrayList<Integer> value = entry.getValue();
+            System.out.println(key + ", " + value);
         }
         System.out.println("\n}");
     }
