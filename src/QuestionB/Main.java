@@ -14,18 +14,18 @@ public class Main {
         int[] outputPattern = {0, 0, 1, 1};
         int[] testPattern1 = {1, 1, 0, 1};
         nnet1.train(inputPattern, outputPattern);
-        nnet1.predict(testPattern1);
+        nnet1.test(testPattern1);
 
         // 2. Test the trained network with an incomplete
         // version of the input pattern.
         System.out.print(ANSI_GREEN + "\n\n2) Testing with incomplete pattern:\n" + ANSI_RESET);
         int[] incompletePattern = {1, 0, 0, 0};
-        nnet1.predict(incompletePattern);
+        nnet1.test(incompletePattern);
 
         // 3. Test the trained network with a noisy pattern.
         System.out.print(ANSI_GREEN + "\n\n3) Testing with noisy pattern:\n" + ANSI_RESET);
         int[] noisyPattern = {1, 0, 1, 1};
-        nnet1.predict(noisyPattern);
+        nnet1.test(noisyPattern);
 
         //  4. Teach a 36-synapse network
         System.out.print(ANSI_GREEN + "\n\n4) Teach a 36-synapse network:\n" + ANSI_RESET);
@@ -37,26 +37,27 @@ public class Main {
         int[] testPattern    = {1, 1, 1, 0, 1, 0};
         nnet.train(inputPattern1, outputPattern1);
         nnet.train(inputPattern2, outputPattern2);
-        nnet.predict(testPattern);
+        nnet.test(testPattern);
         nnet.printSynapticMatrix();
 
         // 5. Test the network with a distorted version of one of the
         // two training patterns
         System.out.print(ANSI_GREEN + "\n\n5) Testing with distorted pattern:\n" + ANSI_RESET);
         int[] distortedPattern = {1, 0, 1, 0, 1, 1};
-        nnet.predict(distortedPattern);
+        nnet.test(distortedPattern);
 
         // 6. Fraction of the synapses and parameter.
         System.out.println(ANSI_GREEN + "\n\n6) Fraction of the synapses and parameter:" + ANSI_RESET);
-        System.out.println("QuestionB.QuestionC.Network Saturation Info:");
+        System.out.println("Layer Saturation Info:");
         System.out.println("Load Parameter (α): " + ANSI_CYAN + nnet.getLoadParameter() + ANSI_RESET);
         System.out.println("Fraction of Synapses: " + ANSI_CYAN + nnet.getFractionOfSynapses() + ANSI_RESET);
 
         // 7. Calculate the maximum load parameter for the network
-        System.out.println(ANSI_GREEN + "\n\n6) Calculate the maximum load parameter for the network" + ANSI_RESET);
-        nnet.saturate();
-        System.out.println("Max Load Parameter (α): " + ANSI_CYAN + nnet.getLoadParameter() + ANSI_RESET);
-        System.out.println("Max Fraction of Synapses: " + ANSI_CYAN + nnet.getFractionOfSynapses() + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "\n\n7) Calculate the maximum load parameter for the network" + ANSI_RESET);
+//        nnet1.saturate();
+//        System.out.println("Max Load Parameter (α): " + ANSI_CYAN + nnet.getLoadParameter() + ANSI_RESET);
+        nnet1.saturate();
+//        System.out.println("Max Fraction of Synapses: " + ANSI_CYAN + nnet.getFractionOfSynapses() + ANSI_RESET);
 
 //        System.out.println(Arrays.toString(randomBinaryVector(6)));
     }

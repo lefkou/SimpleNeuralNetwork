@@ -1,101 +1,89 @@
-package QuestionC;
+package QuestionE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class Network {
+public class Layer {
 
-    public class Association {
-
-        double[] inputPattern;
-        double[] outputPattern;
-
-        Association(double[] inputPattern, double[] outputPattern) {
-            this.inputPattern = inputPattern;
-            this.outputPattern = outputPattern;
-        }
-
-        @Override
-        public String toString() {
-            return "Association { \n" +
-                    " InputPattern:  " + Arrays.toString(inputPattern) +
-                    ",\n OutputPattern: " + Arrays.toString(outputPattern) +
-                    "\n}";
-        }
+    public int[] getOutputVector() {
+        return outputVector;
     }
 
 
-    private int width;
+    public int width;
     private int height;
-    private double[] synapticMatrix;
-    private List<Association> associations;
-    private double[] sumVector;
-    private double[] outputVector;
-    private double maxLoadParameter;
+    private int[] synapticMatrix;
+    private int[] sumVector;
+    private int[] outputVector;
+    public float maxLoadParameter;
 
 
     // constructor
-    public Network(int w, int h) {
+    public Layer(int w, int h) {
         this.width = w;
         this.height = h;
-        this.synapticMatrix = new double[w*h];
-        this.associations = new ArrayList<>();
-        this.sumVector = new double[w];
-        this.outputVector = new double[w];
+        this.synapticMatrix = new int[w*h];
+        this.sumVector = new int[w];
+        this.outputVector = new int[w];
     }
 
 
     // update the matrix with the created from a training pair
-    void updateSynapticMatrix(double[] inputPattern, double[] outputPattern) {
+    void updateSynapticMatrix(int[] inputPattern, int[] outputPattern) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                this.synapticMatrix[i*width+j] = inputPattern[i] * outputPattern[j] / (width+height);
+                if(inputPattern[i] == 1 &&  outputPattern[j] == 1 && this.synapticMatrix[i*width+j] == 0) {
+                    this.synapticMatrix[i*width+j] = 1;
+                }
             }
         }
     }
 
-
-
-    // save pair of input and output pattern
-    void addAssociation(double[] inputPattern, double[] outputPattern) {
-        this.associations.add(new Association(inputPattern, outputPattern));
-    }
-
-
-    // show associations (pairs of input and output patterns) saved
-    void printAssociations() {
-        System.out.println();
-        this.associations.forEach(System.out::println);
-    }
-
-
     // training
-    void train(double[] inputPattern, double[] outputPattern) {
+    void train(int[] inputPattern, int[] outputPattern) {
         updateSynapticMatrix(inputPattern, outputPattern);
-        addAssociation(inputPattern, outputPattern);
     }
 
 
-    void createSummaryVector(double[] input) {
+    // triple training in one go
+    void trainTriple(int[] inputPatternTriple, int[] outputPatternTriple) {
+
+        int[] inTemp  = new int[width];
+        int[] outTemp = new int[width];
+
+        for (int j = 0; j < inputPatternTriple.length; j+=width) {
+
+            for (int i = 0; i < width; i++) {
+                inTemp[i] = inputPatternTriple[i+j];
+                outTemp[i] = outputPatternTriple[i+j];
+            }
+            train(inTemp, outTemp);
+            System.out.println("Input = " + Arrays.toString(inTemp) +
+                    ", Output = " + Arrays.toString(outTemp));
+        }
+
+    }
+
+    void createSummaryVector(int[] input) {
         for (int i = 0; i < width; i++) {
-            double sum = 0;
+            int sum = 0;
             for (int j = 0; j < height; j++) {
-                sum += this.synapticMatrix[(j*width+i)];
+                sum += input[j] * this.synapticMatrix[(j*width+i)];
             }
             sumVector[i] = sum;
         }
     }
 
 
-    private int calcThreshold(double[] input) {
+    private int calcThreshold(int[] input) {
         // count no of 1s in input and output patterns
         int inputCount = 0, outputCount = 0;
         for(int i=0; i < width; i++) {
             if(input[i] == 1)
                 inputCount ++;
-            if(associations.get(0).inputPattern[i] == 1)
+            if(Network.associations.get(0).inputPattern[i] == 1)
                 outputCount ++;
         }
         // compare them and return lesser
@@ -105,40 +93,42 @@ public class Network {
         return outputCount;
     }
 
-    private double sigmoid(double num) {
-        return 1 / (1 + Math.pow(Math.E, - num));
-    }
 
+    private void createOutputVector(int[] input) {
 
-    private void createOutputVector(double[] input) {
+        int threshold = calcThreshold(Network.associations.
+                get(indexWithMinHammingDistance(input)).
+                outputPattern);
         for (int i = 0; i < sumVector.length; i++) {
-            outputVector[i] = sigmoid(sumVector[i] / width);
+            if (sumVector[i] >= threshold) {
+                outputVector[i] = 1;
+            }
         }
     }
 
     // testing
-    double[] test(double[] input) {
+    int[] predict(int[] input) {
 
         // create a vector with the sum of each column of the matrix * input pattern
         createSummaryVector(input);
         createOutputVector(input);
 //        printAssociations();
-        printSynapticMatrix();
+//        printSynapticMatrix();
         System.out.print("Test Pattern: ");
         printPattern(input);
-        printSumVector();
+//        printSumVector();
         printOutputVector();
 
         return outputVector;
     }
 
 
-    int indexWithMinHammingDistance(double[] input) {
+    int indexWithMinHammingDistance(int[] input) {
 
         int minHd = input.length;
         int minHDIndex = 0;
-        for (int i = 0; i < associations.size(); i++) {
-            Association association = associations.get(i);
+        for (int i = 0; i < Network.associations.size(); i++) {
+            Network.Association association = Network.associations.get(i);
             int sum = 0;
             for (int j = 0; j < input.length; j++) {
                 if (input[j] != association.inputPattern[j]) {
@@ -155,11 +145,11 @@ public class Network {
         return minHDIndex;
     }
 
-    public double getLoadParameter() {
-        return (double) associations.size() / (double) width;
+    public float getLoadParameter() {
+        return (float) Network.associations.size() / (float) width;
     }
 
-    public double getFractionOfSynapses() {
+    public float getFractionOfSynapses() {
         // number of synapses that can be strengthened
         int counter = 0;
         for (int i = 0; i < width; i++) {
@@ -169,20 +159,22 @@ public class Network {
                 }
             }
         }
-        return (double)(height*width) / counter;
+        return (float)(height*width) / counter;
     }
 
 
     public void saturate() {
         // train while output is correct
-        boolean found;
+        boolean found = false;
         do {
             this.train(randomBinaryVector(this.width), randomBinaryVector(this.width));
-            found = isPatternCorrect(this.test(randomBinaryVector(this.width)));
+            found = isPatternCorrect(this.predict(randomBinaryVector(this.width)));
             maxLoadParameter = getLoadParameter();
+
+
         } while(found);
-        System.out.println("Fraction of synapses 11: " + getFractionOfSynapses());
-        System.out.println("Max Load parameter 11: " + maxLoadParameter);
+//        System.out.println("Fraction of synapses 11: " + getFractionOfSynapses());
+//        System.out.println("Max Load parameter 11: " + maxLoadParameter);
     }
 
 
@@ -191,15 +183,15 @@ public class Network {
     /* * * * * * * * * * * */
 
 
-    boolean matchPatterns(double[] patternA, double[] patternB) {
+    boolean matchPatterns(int[] patternA, int[] patternB) {
         for (int i = 0; i < patternA.length; i++) {
             if(patternA[i] != patternB[i]) return false;
         }
         return true;
     }
 
-    boolean isPatternCorrect (double[] pattern) {
-        for (Association association : associations) {
+    boolean isPatternCorrect (int[] pattern) {
+        for (Network.Association association : Network.associations) {
             if (matchPatterns(pattern, association.outputPattern)) {
                 return true;
             }
@@ -208,8 +200,8 @@ public class Network {
     }
 
 
-    double[] randomBinaryVector(int len) {
-        double[] arr = new double[len];
+    int[] randomBinaryVector(int len) {
+        int[] arr = new int[len];
         Random r = new Random();
         for(int i=0 ; i<arr.length ; i++){
             boolean bool = r.nextBoolean();
@@ -226,7 +218,7 @@ public class Network {
         for (int i = 0; i < width; i++) {
             System.out.println();
             for (int j = 0; j < height; j++) {
-                System.out.printf(" %.2f", this.synapticMatrix[i*width+j]);
+                System.out.print(" " + this.synapticMatrix[i*width+j]);
             }
         }
         System.out.println("\n}");
@@ -242,10 +234,10 @@ public class Network {
         printPattern(outputVector);
     }
 
-    void printPattern(double[] pattern) {
+    void printPattern(int[] pattern) {
         System.out.print("[");
         for (int i = 0; i < pattern.length; i++) {
-            System.out.printf(" %.2f", pattern[i]);
+            System.out.print(" " + pattern[i]);
         }
         System.out.println(" ]");
     }

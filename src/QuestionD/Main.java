@@ -9,11 +9,11 @@ public class Main {
                 "Write a new version of your implementation extending the original \n" +
                 "”pencil and paper” strategy for matching three inputs simultaneously.\n" + ANSI_RESET);
         Network nnet1 = new Network(4,4);
-        int[] inputPattern  = {1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1};
-        int[] outputPattern = {0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1};
-        int[] testPattern1 = {1, 1, 0, 1};
-        nnet1.train(inputPattern, outputPattern);
-        nnet1.predict(testPattern1);
+        int[] inputPattern  = {1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1};
+        int[] outputPattern = {0, 0, 1, 1};
+        int[] testPattern1  = {1, 0, 0, 1};
+        nnet1.multiTrain(inputPattern, outputPattern);
+        nnet1.test(testPattern1);
     }
 
 

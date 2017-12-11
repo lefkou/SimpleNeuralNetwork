@@ -8,11 +8,11 @@ public class Main {
         System.out.print(ANSI_GREEN + "\n\nC) Write a new version of your implementation using\n" +
                 "floating synaptic weight (instead of 0 or 1 as binary weights)\n" + ANSI_RESET);
         Network nnet1 = new Network(3,3);
-        double[] inputPattern  = {0.5, 0.7, 0.8};
-        double[] outputPattern = {0.3, 0.5, 0.7};
-        double[] testPattern1 = {0.5, 0.7, 0.8};
+        double[] inputPattern  = {0.9, 0.6, 0.8};
+        double[] outputPattern = {0.2, 0.9, 0.5};
+        double[] testPattern1 =  {0.1, 0.6, 0.8};
         nnet1.train(inputPattern, outputPattern);
-        nnet1.predict(testPattern1);
+        nnet1.test(testPattern1);
     }
 
 

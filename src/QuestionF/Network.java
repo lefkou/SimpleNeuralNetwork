@@ -79,7 +79,6 @@ public class Network {
     void printAssociations() {
         System.out.println();
         this.associations.forEach(System.out::println);
-
     }
 
 

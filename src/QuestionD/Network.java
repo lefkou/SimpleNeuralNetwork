@@ -82,16 +82,19 @@ public class Network {
 
 
     // triple training in one go
-    void trainTriple(int[] inputPatternTriple, int[] outputPatternTriple) {
+    void multiTrain(int[] inputPatternTriple, int[] outputPattern) {
 
-        for (int i = 0; i < inputPatternTriple.length; i++) {
-            if(i < 4) {
-                int[] inTemp = new int[4];
-                int[] outTemp = new int[4];
-                inTemp[i] = inputPatternTriple[i];
-                outTemp[i] = outputPatternTriple[i];
+        int[] inTemp  = new int[width];
+
+        for (int j = 0; j < inputPatternTriple.length; j+=width) {
+            for (int i = 0; i < width; i++) {
+                inTemp[i] = inputPatternTriple[i+j];
             }
+            train(inTemp, outputPattern);
+            System.out.println("Input = " + Arrays.toString(inTemp) +
+                    ", Output = " + Arrays.toString(outputPattern));
         }
+
     }
 
     void createSummaryVector(int[] input) {
@@ -135,7 +138,7 @@ public class Network {
     }
 
     // testing
-    int[] predict(int[] input) {
+    int[] test(int[] input) {
 
         // create a vector with the sum of each column of the matrix * input pattern
         createSummaryVector(input);
@@ -196,7 +199,7 @@ public class Network {
         boolean found = false;
         do {
             this.train(randomBinaryVector(this.width), randomBinaryVector(this.width));
-            found = isPatternCorrect(this.predict(randomBinaryVector(this.width)));
+            found = isPatternCorrect(this.test(randomBinaryVector(this.width)));
             maxLoadParameter = getLoadParameter();
 
 

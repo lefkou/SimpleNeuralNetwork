@@ -51,13 +51,12 @@ public class Network {
     void updateSynapticMatrix(int[] inputPattern, int[] outputPattern) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                if(inputPattern[i] == 1 &&  outputPattern[j] == 1 && this.synapticMatrix[i*width+j] == 0) {
+                if(inputPattern[i] * outputPattern[j] == 1 && this.synapticMatrix[i*width+j] == 0) {
                     this.synapticMatrix[i*width+j] = 1;
                 }
             }
         }
     }
-
 
 
     // save pair of input and output pattern
@@ -122,7 +121,7 @@ public class Network {
     }
 
     // testing
-    int[] predict(int[] input) {
+    int[] test(int[] input) {
 
         // create a vector with the sum of each column of the matrix * input pattern
         createSummaryVector(input);
@@ -174,22 +173,26 @@ public class Network {
                 }
             }
         }
-        return (float)(height*width) / counter;
+        return counter / (float)(height*width);
     }
 
 
     public void saturate() {
         // train while output is correct
-        boolean found = false;
+        boolean found;
         do {
-            this.train(randomBinaryVector(this.width), randomBinaryVector(this.width));
-            found = isPatternCorrect(this.predict(randomBinaryVector(this.width)));
+            int[] inputPattern = randomBinaryVector(this.width);
+            this.train(inputPattern, randomBinaryVector(this.width));
+            found = isPatternCorrect(this.test(inputPattern));
+            if(!found) {
+                associations.remove(associations.size()-1);
+            }
             maxLoadParameter = getLoadParameter();
-
-
         } while(found);
-//        System.out.println("Fraction of synapses 11: " + getFractionOfSynapses());
-//        System.out.println("Max Load parameter 11: " + maxLoadParameter);
+
+        System.out.println("Max Fraction of synapses: " + getFractionOfSynapses());
+        System.out.println("Max Load parameter: " + maxLoadParameter);
+        System.out.println("Trained " + associations.size()+ " times.");
     }
 
 
@@ -218,7 +221,7 @@ public class Network {
     int[] randomBinaryVector(int len) {
         int[] arr = new int[len];
         Random r = new Random();
-        for(int i=0 ; i<arr.length ; i++){
+        for(int i=0 ; i < arr.length ; i++){
             boolean bool = r.nextBoolean();
             arr[i] = (bool) ? 1 : 0;
         }
