@@ -1,9 +1,11 @@
 package QuestionE;
 
-import java.util.ArrayList;
+
+
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
+
+import static QuestionE.Network.associations;
 
 public class Layer {
 
@@ -41,8 +43,10 @@ public class Layer {
         }
     }
 
+
     // training
     void train(int[] inputPattern, int[] outputPattern) {
+//        addAssociation(inputPattern, outputPattern);
         updateSynapticMatrix(inputPattern, outputPattern);
     }
 
@@ -83,7 +87,7 @@ public class Layer {
         for(int i=0; i < width; i++) {
             if(input[i] == 1)
                 inputCount ++;
-            if(Network.associations.get(0).inputPattern[i] == 1)
+            if(associations.get(0).inputPattern[i] == 1)
                 outputCount ++;
         }
         // compare them and return lesser
@@ -96,7 +100,7 @@ public class Layer {
 
     private void createOutputVector(int[] input) {
 
-        int threshold = calcThreshold(Network.associations.
+        int threshold = calcThreshold(associations.
                 get(indexWithMinHammingDistance(input)).
                 outputPattern);
         for (int i = 0; i < sumVector.length; i++) {
@@ -114,21 +118,25 @@ public class Layer {
         createOutputVector(input);
 //        printAssociations();
 //        printSynapticMatrix();
-        System.out.print("Test Pattern: ");
-        printPattern(input);
+//        System.out.print("Test Pattern: ");
+//        printPattern(input);
 //        printSumVector();
-        printOutputVector();
+//        printOutputVector();
 
         return outputVector;
     }
 
+    // save pair of input and output pattern
+    void addAssociation(int[] inputPattern, int[] outputPattern) {
+        associations.add(new Association(inputPattern, outputPattern));
+    }
 
     int indexWithMinHammingDistance(int[] input) {
 
         int minHd = input.length;
         int minHDIndex = 0;
-        for (int i = 0; i < Network.associations.size(); i++) {
-            Network.Association association = Network.associations.get(i);
+        for (int i = 0; i < associations.size(); i++) {
+            Association association = associations.get(i);
             int sum = 0;
             for (int j = 0; j < input.length; j++) {
                 if (input[j] != association.inputPattern[j]) {
@@ -146,7 +154,7 @@ public class Layer {
     }
 
     public float getLoadParameter() {
-        return (float) Network.associations.size() / (float) width;
+        return (float) associations.size() / (float) width;
     }
 
     public float getFractionOfSynapses() {
@@ -191,7 +199,7 @@ public class Layer {
     }
 
     boolean isPatternCorrect (int[] pattern) {
-        for (Network.Association association : Network.associations) {
+        for (Association association : associations) {
             if (matchPatterns(pattern, association.outputPattern)) {
                 return true;
             }

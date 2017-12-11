@@ -1,74 +1,58 @@
 package QuestionE;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Network {
-
-    public class Association {
-
-        int[] inputPattern;
-        int[] outputPattern;
-
-        Association(int[] inputPattern, int[] outputPattern) {
-            this.inputPattern = inputPattern;
-            this.outputPattern = outputPattern;
-        }
-
-        @Override
-        public String toString() {
-            return "Association { \n" +
-                    " InputPattern:  " + Arrays.toString(inputPattern) +
-                    ",\n OutputPattern: " + Arrays.toString(outputPattern) +
-                    "\n}";
-        }
-    }
 
 
     public int width;
     private int height;
     public static List<Association> associations;
     public float maxLoadParameter;
-    List<Layer> layers;
+    public Layer l1, l2;
 
 
     // constructor
     public Network(int w, int h) {
         this.width = w;
         this.height = h;
-        this.associations = new ArrayList<>();
-        this.layers = new ArrayList<>();
+        associations = new ArrayList<>();
+        this.l1 = new Layer(width, height);
+        this.l2 = new Layer(width, height);
     }
 
 
-    // save pair of input and output pattern
+//    // save pair of input and output pattern
     void addAssociation(int[] inputPattern, int[] outputPattern) {
-        this.associations.add(new Association(inputPattern, outputPattern));
+        associations.add(new Association(inputPattern, outputPattern));
     }
 
     // show associations (pairs of input and output patterns) saved
     void printAssociations() {
         System.out.println();
-        this.associations.forEach(System.out::println);
+        associations.forEach(System.out::println);
 
     }
 
 
     // training
-    int[] train(int[] inputPattern, int[] outputPattern) {
+    void train(int[] inputPattern, int[] outputPattern) {
         addAssociation(inputPattern, outputPattern);
-        Layer startLayer = new Layer(width, height);
-        startLayer.train(inputPattern, outputPattern);
-        this.layers.add(startLayer);
-        return startLayer.predict(inputPattern);
+        this.l1.train(inputPattern, outputPattern);
+        int[] l1output = l1.predict(inputPattern);
+        this.l2.train(l1output, outputPattern);
+        System.out.println("Layer 1 input vector:  " + Arrays.toString(inputPattern));
+        System.out.println("Layer 1 output vector: " + Arrays.toString(l1output));
+        l1.printSynapticMatrix();
+        System.out.println("Layer 2 input vector:  " + Arrays.toString(l1output));
+
+
+
     }
 
 
     // triple training in one go
     void multiTrain(int[] inputPatternTriple, int[] outputPattern) {
-
         int[] inTemp  = new int[width];
 
         for (int j = 0; j < inputPatternTriple.length; j+=width) {
@@ -79,34 +63,17 @@ public class Network {
             System.out.println("Input = " + Arrays.toString(inTemp) +
                     ", Output = " + Arrays.toString(outputPattern));
         }
-
     }
 
+    // testing with test pattern
     int[] test(int[] input) {
-        int[] test = this.layers.
+        int[] l2output = this.l2.predict(input);
+        System.out.println("Layer 2 output vector:  " + Arrays.toString(l2output));
+        l2.printSynapticMatrix();
+        return l2output;
+
     }
 
-    int indexWithMinHammingDistance(int[] input) {
-
-        int minHd = input.length;
-        int minHDIndex = 0;
-        for (int i = 0; i < associations.size(); i++) {
-            Association association = associations.get(i);
-            int sum = 0;
-            for (int j = 0; j < input.length; j++) {
-                if (input[j] != association.inputPattern[j]) {
-                    sum++;
-                }
-            }
-            if (sum < minHd) {
-                minHd = sum;
-                minHDIndex = i;
-            }
-
-        }
-
-        return minHDIndex;
-    }
 
     public float getLoadParameter() {
         return (float) associations.size() / (float) width;

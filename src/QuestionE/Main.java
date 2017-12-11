@@ -1,18 +1,23 @@
 package QuestionE;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
         System.out.println(ANSI_GREEN + "EXERCISE E" + ANSI_RESET);
 
 
-        System.out.print(ANSI_GREEN + "\n\n4) Teach a 36-synapse network:\n" + ANSI_RESET);
-        Network nnet  = new Network(6,6);
-        int[] inputPattern  = {1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1};
-        int[] outputPattern = {0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1};
-        int[] testPattern1  = {1, 1, 0, 1};
-        nnet.multiTrain(inputPattern, outputPattern);
+        System.out.print(ANSI_GREEN + "Teach a one-hidden-layer network:\n" + ANSI_RESET);
+        Network nnet  = new Network(4,4);
+        int[] inputPattern  = {1, 0, 0, 1};
+        int[] outputPattern = {1, 0, 1, 1};
+        int[] testPattern1  = {1, 0, 0, 1};
+        nnet.train(inputPattern, outputPattern);
         nnet.test(testPattern1);
+        nnet.l1.printSumVector();
+        nnet.l2.printSumVector();
+//        System.out.println("Output Vector: " + Arrays.toString());
 
 
 //        System.out.println(Arrays.toString(randomBinaryVector(6)));
