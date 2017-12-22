@@ -49,14 +49,15 @@ public class Main {
         // 6. Fraction of the synapses and parameter.
         System.out.println(ANSI_GREEN + "\n\n6) Fraction of the synapses and parameter:" + ANSI_RESET);
         System.out.println("Layer Saturation Info:");
-        System.out.println("Load Parameter (α): " + ANSI_CYAN + nnet.getLoadParameter() + ANSI_RESET);
-        System.out.println("Fraction of Synapses: " + ANSI_CYAN + nnet.getFractionOfSynapses() + ANSI_RESET);
+        System.out.println("Load Parameter (α): " + ANSI_CYAN + nnet1.getLoadParameter() + ANSI_RESET);
+        System.out.println("Fraction of Synapses: " + ANSI_CYAN + nnet1.getFractionOfSynapses() + ANSI_RESET);
 
         // 7. Calculate the maximum load parameter for the network
         System.out.println(ANSI_GREEN + "\n\n7) Calculate the maximum load parameter for the network" + ANSI_RESET);
 //        nnet1.saturate();
 //        System.out.println("Max Load Parameter (α): " + ANSI_CYAN + nnet.getLoadParameter() + ANSI_RESET);
         nnet1.saturate();
+        nnet.saturate();
 //        System.out.println("Max Fraction of Synapses: " + ANSI_CYAN + nnet.getFractionOfSynapses() + ANSI_RESET);
 
 //        System.out.println(Arrays.toString(randomBinaryVector(6)));

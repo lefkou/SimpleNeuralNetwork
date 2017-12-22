@@ -2,17 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb018bb-727a-4e17-bde6-3b8b6287016d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/QuestionE/Association.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Main.class" afterPath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Network.class" afterPath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Network.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Layer.class" afterPath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Layer.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Main.class" afterPath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Network$Association.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Network.class" afterPath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Network.class" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionE/Layer.java" afterPath="$PROJECT_DIR$/src/QuestionE/Layer.java" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionE/Main.java" afterPath="$PROJECT_DIR$/src/QuestionE/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionE/Network.java" afterPath="$PROJECT_DIR$/src/QuestionE/Network.java" />
+      <change beforePath="$PROJECT_DIR$/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionB/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionB/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionB/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionC/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionC/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionC/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionD/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionD/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionD/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionE/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionE/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionE/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionF/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionF/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AI_Java/QuestionF/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionB/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionB/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionB/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionC/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionC/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionC/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionD/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Layer.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionE/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionF/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionF/Network$Association.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/nnet_java/QuestionF/Network.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionB/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionB/Network.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionC/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionC/Network.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionD/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionD/Network.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionE/Association.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionE/Layer.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionE/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionE/Network.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionF/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionF/Network.java" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,18 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/QuestionD/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,7 +71,6 @@
       <find>predic</find>
       <find>calc</find>
       <find>fratio</find>
-      <find>satura</find>
       <find>randomBina</find>
       <find>random</find>
       <find>saturate</find>
@@ -68,6 +90,7 @@
       <find>train</find>
       <find>assco</find>
       <find>Network</find>
+      <find>satura</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,10 +106,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/QuestionF/Main.java" />
         <option value="$PROJECT_DIR$/src/QuestionF/Network.java" />
-        <option value="$PROJECT_DIR$/src/QuestionB/Main.java" />
-        <option value="$PROJECT_DIR$/src/QuestionC/Main.java" />
-        <option value="$PROJECT_DIR$/src/QuestionB/Network.java" />
-        <option value="$PROJECT_DIR$/src/QuestionC/Network.java" />
         <option value="$PROJECT_DIR$/src/QuestionD/Network.java" />
         <option value="$PROJECT_DIR$/src/QuestionD/Main.java" />
         <option value="$PROJECT_DIR$/README.txt" />
@@ -94,6 +113,10 @@
         <option value="$PROJECT_DIR$/src/QuestionE/Main.java" />
         <option value="$PROJECT_DIR$/src/QuestionE/Network.java" />
         <option value="$PROJECT_DIR$/src/QuestionE/Layer.java" />
+        <option value="$PROJECT_DIR$/src/QuestionC/Network.java" />
+        <option value="$PROJECT_DIR$/src/QuestionB/Main.java" />
+        <option value="$PROJECT_DIR$/src/QuestionB/Network.java" />
+        <option value="$PROJECT_DIR$/src/QuestionC/Main.java" />
       </list>
     </option>
   </component>
@@ -254,7 +277,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,45 +291,12 @@
             <path>
               <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
               <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="QuestionB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="QuestionC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="QuestionD" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="QuestionE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nnet_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nnet_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="QuestionF" type="462c0819:PsiDirectoryNode" />
+              <item name="Activity 4" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +321,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (4)">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -514,11 +507,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main (4)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main (3)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (4)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -536,44 +529,45 @@
       <option name="presentableId" value="Default" />
       <updated>1512905418541</updated>
       <workItem from="1512905419830" duration="125000" />
-      <workItem from="1512905613780" duration="40089000" />
+      <workItem from="1512905613780" duration="44479000" />
+      <workItem from="1513084327241" duration="148000" />
+      <workItem from="1513085288053" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40214000" />
+    <option name="totallyTimeSpent" value="45361000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="987" extended-state="6" />
-    <editor active="true" />
+    <frame x="78" y="23" width="1680" height="987" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49836066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47431695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119642854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119642854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,152 +584,29 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/AI_Java.iml" />
-    <entry file="file://$PROJECT_DIR$/out/production/AI_Java/QuestionB/Network.class">
+    <entry file="file://$PROJECT_DIR$/out/production/AI_Java/QuestionB/Network.class" />
+    <entry file="file://$PROJECT_DIR$/out/production/AI_Java/QuestionB/Main.class" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionE/Layer.java" />
+    <entry file="file://$PROJECT_DIR$/README.txt" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-809">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="625" column="6" lean-forward="false" selection-start-line="625" selection-start-column="6" selection-end-line="625" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/AI_Java/QuestionB/Main.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionE/Layer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionB/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4210">
-          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4410#4411#0" expanded="true" />
-            <element signature="e#4476#4477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionD/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-          <folding>
-            <element signature="class#Association#0;class#Network#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionF/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding>
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4811#4812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionB/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionF/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionE/Association.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionE/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionC/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionC/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="122" column="30" lean-forward="false" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3017#3018#0" expanded="true" />
-            <element signature="e#3073#3074#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionE/Layer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionE/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2310#2311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuestionD/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuestionB/Network.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionB/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionC/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionC/Network.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionD/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionD/Network.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionE/Association.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionE/Layer.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionE/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionE/Network.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionF/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/QuestionF/Network.java" />
   </component>
   <component name="masterDetails">
     <states>

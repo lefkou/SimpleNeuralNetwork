@@ -59,8 +59,9 @@ public class Network {
     }
 
 
+
     // save pair of input and output pattern
-    void addAssociation(int[] inputPattern, int[] outputPattern) {
+    void storeAssociation(int[] inputPattern, int[] outputPattern) {
         this.associations.add(new Association(inputPattern, outputPattern));
     }
 
@@ -76,7 +77,7 @@ public class Network {
     // training
     void train(int[] inputPattern, int[] outputPattern) {
         updateSynapticMatrix(inputPattern, outputPattern);
-        addAssociation(inputPattern, outputPattern);
+        storeAssociation(inputPattern, outputPattern);
     }
 
 
@@ -130,7 +131,7 @@ public class Network {
 //        printSynapticMatrix();
         System.out.print("Test Pattern: ");
         printPattern(input);
-        printSumVector();
+//        printSumVector();
         printOutputVector();
 
         return outputVector;
@@ -183,9 +184,13 @@ public class Network {
         do {
             int[] inputPattern = randomBinaryVector(this.width);
             this.train(inputPattern, randomBinaryVector(this.width));
-            found = isPatternCorrect(this.test(inputPattern));
+            int[] output = this.test(inputPattern);
+            found = isPatternCorrect(output);
             if(!found) {
                 associations.remove(associations.size()-1);
+            }
+            if(Arrays.equals(output, new int[]{1, 1, 1, 1})){
+                return;
             }
             maxLoadParameter = getLoadParameter();
         } while(found);

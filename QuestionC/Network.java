@@ -78,6 +78,25 @@ public class Network {
     }
 
 
+    void scaleMatrix() {
+        double max = 0, min = 0;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if(max < this.synapticMatrix[i*width+j]) {
+                    max = this.synapticMatrix[i*width+j];
+                }
+                if(min > this.synapticMatrix[i*width+j]) {
+                    min = this.synapticMatrix[i*width+j];
+                }
+            }
+        }
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                this.synapticMatrix[i*width+j] = (this.synapticMatrix[i*width+j] - min) / (max - min);
+            }
+        }
+
+    }
     void createSummaryVector(double[] input) {
         for (int i = 0; i < width; i++) {
             double sum = 0;
@@ -88,22 +107,6 @@ public class Network {
         }
     }
 
-
-    private int calcThreshold(double[] input) {
-        // count no of 1s in input and output patterns
-        int inputCount = 0, outputCount = 0;
-        for(int i=0; i < width; i++) {
-            if(input[i] == 1)
-                inputCount ++;
-            if(associations.get(0).inputPattern[i] == 1)
-                outputCount ++;
-        }
-        // compare them and return lesser
-        if(inputCount <= outputCount){
-            return  inputCount;
-        }
-        return outputCount;
-    }
 
     private double sigmoid(double num) {
         return 1 / (1 + Math.pow(Math.E, - num));
@@ -116,10 +119,12 @@ public class Network {
         }
     }
 
+
     // testing
     double[] test(double[] input) {
 
         // create a vector with the sum of each column of the matrix * input pattern
+        scaleMatrix();
         createSummaryVector(input);
         createOutputVector(input);
 //        printAssociations();
